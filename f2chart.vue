@@ -14,26 +14,110 @@ export default {
       type: Array,
       required: true
     },
+    width: {
+      type: [String, Number],
+      default: null
+    },
+    height: {
+      type: [String, Number],
+      default: null
+    },
+    padding: {
+      default: "auto"
+    },
+    appendPadding: {
+      default: 15
+    },
+    pixelRatio: {
+      type: Number,
+      default: 1
+    },
+    animate: {
+      type: Boolean,
+      default: true
+    },
+    limitInPlot: {
+      type: Boolean,
+      default: false
+    },
     geometry: {
       required: true
     },
+    scale: {
+      type: Array
+    },
+    coord: {
+      type: Object
+    },
+    axis: {
+      type: Array
+    },
+    tooltip: {
+      type: Object
+    }
   },
   data() {
-    return {};
+    return {
+      chart: {}
+    };
   },
   mounted() {
-    const chart = new F2.Chart({
+    this.chart = new F2.Chart({
       id: "mountNode",
+      width: this.width,
+      height: this.height,
+      padding: this.padding,
+      appendPadding: this.appendPadding,
+      pixelRatio: this.pixelRatio,
+      animate: this.animate,
+      limitInPlot: this.limitInPlot
     })
-    chart.source(this.data);
+
+    this.chart.source(this.data);
+
     for (let i = 0; i < this.geometry.length; i++) {
-      chart[this.geometry[i].type]()
-        .position(
-          this.geometry[i].position[0] + "*" + this.geometry[i].position[1]
-        )
+      if (this.geometry.size) {
+        this.chart[this.geometry[i].type]()
+          .position(
+            this.geometry[i].position[0] + "*" + this.geometry[i].position[1]
+          )
+          .size(this.geometry[i].size)
+          .color(this.geometry[i].color || "")
+          .adjust(this.geometry[i].adjust || false)
+          .style(this.geometry[i].style || {})
+          .animate(this.geometry[i].animation || {});
+      } else {
+        this.chart[this.geometry[i].type]()
+          .position(
+            this.geometry[i].position[0] + "*" + this.geometry[i].position[1]
+          )
+          .color(this.geometry[i].color || "")
+          .adjust(this.geometry[i].adjust || false)
+          .style(this.geometry[i].style || {})
+          .animate(this.geometry[i].animation || {});
+      }
     }
 
-    chart.render();
+    if (this.scale) {
+      this.scale.forEach((e, i) => {
+        this.chart.scale(e.field, e.config);
+      });
+    }
+
+    this.chart.coord(this.coord.type, this.coord.config);
+
+    if (this.axis) {
+      this.axis.forEach((e, i) => {
+        this.chart.axis(e.field, e.config);
+      });
+    }
+
+    this.chart.render();
+  },
+  methods: {
+    get(param) {
+      return this.chart.get(param)
+    }
   }
 }
 </script>
