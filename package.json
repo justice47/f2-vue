@@ -1,0 +1,22 @@
+{
+  "name": "f2-vue",
+  "version": "0.0.1",
+  "description": "Vue component for elegant, interactive and flexible mobile chart library",
+  "main": "f2chart.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justice47/f2-vue.git"
+  },
+  "author": "justice47",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/justice47/f2-vue/issues"
+  },
+  "homepage": "https://github.com/justice47/f2-vue#readme",
+  "dependencies": {
+    "@antv/f2": "^3.4.2"
+  }
+}
