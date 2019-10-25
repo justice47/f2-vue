@@ -52,6 +52,9 @@ export default {
     axis: {
       type: Array
     },
+    legend: {
+      type: [Object, Boolean, Array]
+    },
     tooltip: {
       type: Object
     }
@@ -83,6 +86,7 @@ export default {
           )
           .size(this.geometry[i].size)
           .color(this.geometry[i].color || "")
+          .shape(this.geometry[i].shape || "")
           .adjust(this.geometry[i].adjust || false)
           .style(this.geometry[i].style || {})
           .animate(this.geometry[i].animation || {});
@@ -92,6 +96,7 @@ export default {
             this.geometry[i].position[0] + "*" + this.geometry[i].position[1]
           )
           .color(this.geometry[i].color || "")
+          .shape(this.geometry[i].shape || "")
           .adjust(this.geometry[i].adjust || false)
           .style(this.geometry[i].style || {})
           .animate(this.geometry[i].animation || {});
@@ -110,6 +115,21 @@ export default {
       this.axis.forEach((e, i) => {
         this.chart.axis(e.field, e.config);
       });
+    }
+
+    //Setting Legend
+    if (Array.isArray(this.legend)&&this.legend.length>0) {
+      this.legend.forEach((e,i)=> {
+        this.chart.legend(this.legend[i].field, this.legend[i].config)
+      })
+    } else if (typeof this.legend === 'object') {
+      this.chart.legend(this.legend.field, this.legend.config)
+    } else if (this.legend === false) {
+      this.chart.legend(false)
+    }
+
+    if (this.tooltip) {
+      this.chart.tooltip(this.tooltip)
     }
 
     this.chart.render();
