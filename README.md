@@ -20,6 +20,7 @@ Original library - [antvis/f2](https://github.com/antvis/f2 "antvis/f2")
 ⚠️ Util methods  
 ⚠️ Context  
 ⚠️ All the methods besides first render  
+⚠️ Make installable as a plugin  
 
 ## Installation
 
@@ -47,8 +48,8 @@ export default {
 
 ## Docs
 
-You can find full API for F2 chart here: [API for F2](https://antv.gitbook.io/f2/api/ "API for F2")
-Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there is actual list of working features.
+You can find full API for F2 chart here: [API for F2](https://antv.gitbook.io/f2/api/ "API for F2")  
+Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there is actual list of working features.  
 
 ### Basic example
 
