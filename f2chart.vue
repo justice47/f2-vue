@@ -121,8 +121,10 @@ export default {
       });
     }
 
-    this.chart.coord(this.coord.type, this.coord.config);
-
+    if (this.coord) {
+      this.chart.coord(this.coord.type, this.coord.config);
+    }
+    
     if (this.axis) {
       this.axis.forEach((e, i) => {
         this.chart.axis(e.field, e.config);
