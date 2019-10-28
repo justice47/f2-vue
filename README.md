@@ -68,7 +68,7 @@ export default {
    { year: "1952", sales: 52 },
    { year: "1956", sales: 61 }
   ],
-   geometry: [
+  geometry: [
    {
      type: "interval",
      position: ["year", "sales"],
