@@ -39,10 +39,10 @@ export default {
 ```
 <f2chart />
 ```
-##Docs
+## Docs
 You can find full API for F2 chart here: [API for F2](https://antv.gitbook.io/f2/api/ "API for F2")  
 Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there is actual list of working features.
-###Basic example
+### Basic example
 ```
 <f2chart
 	:data="data"
