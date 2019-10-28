@@ -6,19 +6,19 @@ Original library - [antvis/f2](https://github.com/antvis/f2 "antvis/f2")
 
 ## Roadmap
 
-✅ Basic functionality  
-✅ Chart instance settings  
-✅ Geometry  
-✅ Scale  
-✅ Coord  
-✅ Axis  
-✅ Legend  
-✅ Guide  
-✅ Scrollbar  
+✅ Basic functionality
+✅ Chart instance settings
+✅ Geometry
+✅ Scale
+✅ Coord
+✅ Axis
+✅ Legend
+✅ Guide
+✅ Scrollbar
 ✅ Rerender on data change
 
-⚠️ Util methods  
-⚠️ Context  
+⚠️ Util methods
+⚠️ Context
 ⚠️ All the methods besides first render
 
 ## Installation
@@ -47,35 +47,35 @@ export default {
 
 ## Docs
 
-You can find full API for F2 chart here: [API for F2](https://antv.gitbook.io/f2/api/ "API for F2")  
+You can find full API for F2 chart here: [API for F2](https://antv.gitbook.io/f2/api/ "API for F2")
 Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there is actual list of working features.
 
 ### Basic example
 
 ```
 <f2chart
- :data="data"
- :geometry="geometry"
- ref="chart"
+  :data="data"
+  :geometry="geometry"
+  ref="chart"
 />
 ```
 
 ```
 export default {
- return {
-  data: [
-   { year: "1951", sales: 38 },
-   { year: "1952", sales: 52 },
-   { year: "1956", sales: 61 }
-  ],
-  geometry: [
-   {
-     type: "interval",
-     position: ["year", "sales"],
-     color: 'year'
-   }
-  ],
- }
+  return {
+    data: [
+      { year: "1951", sales: 38 },
+      { year: "1952", sales: 52 },
+      { year: "1956", sales: 61 }
+    ],
+    geometry: [
+      {
+        type: "interval",
+        position: ["year", "sales"],
+        color: 'year'
+      }
+    ],
+  }
 }
 ```
 
@@ -85,90 +85,90 @@ export default {
 
 ```
 <f2chart
- :data="data"
- :geometry="geometry"
- :width="500"
- :height="200"
- :scale="scale"
- :coord="coord"
- :tooltip="tooltip"
- :legend="false"
- :guide="guide"
- :scrollBar="scrollBar"
- ref="chart"
+  :data="data"
+  :geometry="geometry"
+  :width="500"
+  :height="200"
+  :scale="scale"
+  :coord="coord"
+  :tooltip="tooltip"
+  :legend="false"
+  :guide="guide"
+  :scrollBar="scrollBar"
+  ref="chart"
 />
 ```
 
 ```
 export default {
- return {
-  data: [
-   { year: "1951", sales: 38 },
-   { year: "1952", sales: 52 },
-   { year: "1956", sales: 61 },
-   { year: "1957", sales: 145 },
-   { year: "1958", sales: 48 },
-   { year: "1959", sales: 38 },
-   { year: "1960", sales: 38 },
-   { year: "1962", sales: 47 }
-  ],
-  geometry: [
-   {
-    type: "interval",
-    position: ["year", "sales"],
-    color: 'year',
-    animation: false
-   },
-   {
-    type: "line",
-    position: ["year", "sales"],
-   }
-  ],
-  scale: [
-   {
-    field: "sales",
-    config: {
-    min: 0,
-    max: 300
+  return {
+    data: [
+      { year: "1951", sales: 38 },
+      { year: "1952", sales: 52 },
+      { year: "1956", sales: 61 },
+      { year: "1957", sales: 145 },
+      { year: "1958", sales: 48 },
+      { year: "1959", sales: 38 },
+      { year: "1960", sales: 38 },
+      { year: "1962", sales: 47 }
+    ],
+    geometry: [
+      {
+        type: "interval",
+        position: ["year", "sales"],
+        color: 'year',
+        animation: false
+      },
+      {
+        type: "line",
+        position: ["year", "sales"],
+      }
+    ],
+    scale: [
+      {
+        field: "sales",
+        config: {
+        min: 0,
+        max: 300
+        }
+      }
+    ],
+    coord: {
+      type: "rect",
+      config: {
+        transposed: false
+      }
+    },
+    axis: [
+      {
+        field: "",
+        config: {}
+      }
+    ],
+    legend: false,
+    tooltip: {
+      alwaysShow: true,
+    },
+    guide: [
+      {
+        type: 'line',
+        config: {
+        start: ['min', 175],
+        end: ['max', 175],
+        style: {
+            lineWidth: 2,
+            stroke: 'red'
+          }
+        }
+      }
+    ],
+    scrollBar: {
+      mode: 'x',
+      xStyle: {
+        offsetY: -5
+      }
     }
-   }
-  ],
-  coord: {
-   type: "rect",
-   config: {
-    transposed: false
-   }
-  },
-  axis: [
-   {
-    field: "",
-    config: {}
-   }
-  ],
-  legend: false,
-  tooltip: {
-   alwaysShow: true,
-  },
-  guide: [
-     {
-    type: 'line',
-    config: {
-     start: ['min', 175],
-     end: ['max', 175],
-     style: {
-      lineWidth: 2,
-      stroke: 'red'
-     }
-    }
-   }
-  ],
-  scrollBar: {
-   mode: 'x',
-   xStyle: {
-     offsetY: -5
-   }
   }
- }
 }
 ```
 
