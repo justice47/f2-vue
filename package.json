@@ -1,6 +1,6 @@
 {
   "name": "f2-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vue component for elegant, interactive and flexible mobile chart library",
   "main": "f2chart.vue",
   "scripts": {
