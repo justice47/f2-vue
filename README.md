@@ -1,4 +1,5 @@
 # f2-vue
+
 Vue component for elegant, interactive and flexible mobile chart library
 
 Original library - [antvis/f2](https://github.com/antvis/f2 "antvis/f2")
@@ -14,7 +15,7 @@ Original library - [antvis/f2](https://github.com/antvis/f2 "antvis/f2")
 ✅ Legend  
 ✅ Guide  
 ✅ Scrollbar  
-✅ Rerender on data change  
+✅ Rerender on data change
 
 ⚠️ Util methods  
 ⚠️ Context  
@@ -25,10 +26,13 @@ Original library - [antvis/f2](https://github.com/antvis/f2 "antvis/f2")
 ```bash
 $ npm install f2-vue
 ```
+
 ## Import
+
 ```
 import f2chart from "f2-vue";
 ```
+
 ```
 export default {
   components: {
@@ -36,13 +40,18 @@ export default {
   }
 },
 ```
+
 ```
 <f2chart />
 ```
+
 ## Docs
+
 You can find full API for F2 chart here: [API for F2](https://antv.gitbook.io/f2/api/ "API for F2")  
 Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there is actual list of working features.
+
 ### Basic example
+
 ```
 <f2chart
 	:data="data"
@@ -50,6 +59,7 @@ Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there 
 	ref="chart"
 />
 ```
+
 ```
 export default {
 	return {
@@ -68,6 +78,7 @@ export default {
 	}
 }
 ```
+
 ![Charts](https://user-images.githubusercontent.com/29502063/67677996-8b5c3f80-f996-11e9-838c-e5bffa0abb13.PNG)
 
 ### Example with some props
@@ -87,6 +98,7 @@ export default {
 	ref="chart"
 />
 ```
+
 ```
 export default {
 	return {
@@ -159,6 +171,7 @@ export default {
 	}
 }
 ```
+
 ![Charts3](https://user-images.githubusercontent.com/29502063/67678557-efcbce80-f997-11e9-926d-7bcf60952999.PNG)
 
 ## Issues and contributing
