@@ -112,7 +112,6 @@ export default {
           .adjust(this.geometry[i].adjust || false)
           .style(this.geometry[i].style || {})
           .animate((this.geometry[i].animation||this.geometry[i].animation===false)?this.geometry[i].animation:true);
-          /* .animate(this.geometry[i].animation||true); */
       }
     }
 
@@ -179,6 +178,12 @@ export default {
   methods: {
     get(param) {
       return this.chart.get(param)
+    }
+  },
+  watch: {
+    data: function(newValue, oldValue) {
+      console.log('data has changed!')
+      this.chart.changeData(newValue)
     }
   }
 }
