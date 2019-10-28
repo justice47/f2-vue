@@ -5,9 +5,12 @@
 </template>
 
 <script>
-import F2 from "@antv/f2";
+import F2 from '@antv/f2/lib/index-all';
 const ScrollBar = require('@antv/f2/lib/plugin/scroll-bar');
+const interaction = require('@antv/f2/lib/interaction/');
+
 F2.Chart.plugins.register(ScrollBar); 
+F2.Chart.plugins.register(interaction); 
 
 export default {
   name: "f2chart",
@@ -80,7 +83,7 @@ export default {
       height: this.height,
       padding: this.padding,
       appendPadding: this.appendPadding,
-      pixelRatio: this.pixelRatio,
+      pixelRatio: window.devicePixelRatio,
       animate: this.animate,
       limitInPlot: this.limitInPlot,
       plugins: ScrollBar
@@ -102,7 +105,6 @@ export default {
           .style(this.geometry[i].style || {})
           .animate(this.geometry[i].animation||true);
       } else {
-        console.log('Type of animation: ' + this.geometry[i].animation)
         this.chart[this.geometry[i].type]()
           .position(
             this.geometry[i].position[0] + "*" + this.geometry[i].position[1]
@@ -132,7 +134,6 @@ export default {
     }
 
     //Setting Legend
-    console.log('Legend is: ' + this.legend)
     if (Array.isArray(this.legend)&&this.legend.length>0) {
       this.legend.forEach((e,i)=> {
         this.chart.legend(this.legend[i].field, this.legend[i].config)
@@ -175,6 +176,8 @@ export default {
       this.chart.scrollBar(this.scrollBar)
     }
 
+    this.chart.interaction('pan');
+
     this.chart.render();
   },
   methods: {
@@ -184,7 +187,6 @@ export default {
   },
   watch: {
     data: function(newValue, oldValue) {
-      console.log('data has changed!')
       this.chart.changeData(newValue)
     }
   }
