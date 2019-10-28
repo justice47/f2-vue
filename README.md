@@ -101,7 +101,7 @@ export default {
 
 ```
 export default {
-	return {
+ return {
 		data: [
 			{ year: "1951", sales: 38 },
 			{ year: "1952", sales: 52 },
@@ -163,7 +163,7 @@ export default {
 		  	}
 		],
 		scrollBar: {
-			mode: 'x',
+		 mode: 'x',
 			xStyle: {
 			  offsetY: -5
 			}
