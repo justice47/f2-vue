@@ -3,7 +3,7 @@ Vue component for elegant, interactive and flexible mobile chart library
 
 Original library - [antvis/f2](https://github.com/antvis/f2 "antvis/f2")
 
-##Roadmap
+## Roadmap
 
 ✅ Basic functionality  
 ✅ Chart instance settings  
