@@ -30,11 +30,11 @@ $ npm install f2-vue
 
 ## Import
 
-```
+```javascript
 import f2chart from "f2-vue";
 ```
 
-```
+```javascript
 export default {
   components: {
     f2chart
@@ -42,7 +42,7 @@ export default {
 },
 ```
 
-```
+```html
 <f2chart />
 ```
 
@@ -53,7 +53,7 @@ Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there 
 
 ### Basic example
 
-```
+```html
 <f2chart
   :data="data"
   :geometry="geometry"
@@ -61,7 +61,7 @@ Pay attention to the [Roadmap](#Roadmap "Roadmap") section of this page - there 
 />
 ```
 
-```
+```javascript
 export default {
   return {
     data: [
@@ -84,7 +84,7 @@ export default {
 
 ### Example with some props
 
-```
+```html
 <f2chart
   :data="data"
   :geometry="geometry"
@@ -100,7 +100,7 @@ export default {
 />
 ```
 
-```
+```javascript
 export default {
   return {
     data: [

@@ -89,6 +89,7 @@ export default {
       plugins: ScrollBar
     })
 
+
     this.chart.source(this.data);
 
     for (let i = 0; i < this.geometry.length; i++) {
